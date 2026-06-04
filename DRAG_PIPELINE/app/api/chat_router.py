@@ -14,8 +14,15 @@ security = HTTPBearer()
 
 # Mã bí mật dùng chung để giải mã JWT (Cấu hình trong file .env của Chatbot Service)
 # Mã này phải TRÙNG với mã JWT_SECRET của Backend chính
-JWT_SECRET = os.getenv("JWT_SECRET", "resort_management_super_secret_key_2024_must_be_at_least_256_bits_long")
-JWT_ALGORITHM = "HS256"
+try:
+    # Sử dụng os.environ[...] trực tiếp, nếu thiếu key này Python sẽ ném lỗi KeyError ngay lập tức khi chạy app
+    JWT_SECRET = os.environ["JWT_SECRET"]
+except KeyError:
+    logger.critical("LỖI HỆ THỐNG NGHIÊM TRỌNG: Chưa cấu hình biến 'JWT_SECRET' trong file .env!")
+    raise RuntimeError("JWT_SECRET is missing. Application cannot start without it.")
+
+# Thuật toán giải mã (Có thể để dự phòng vì không phải thông tin nhạy cảm)
+JWT_ALGORITHM = os.environ.get("JWT_ALGORITHM", "HS256")
 
 def get_role_from_token(credentials: HTTPAuthorizationCredentials = Depends(security)) -> str:
     """Hàm độc lập tự giải mã Token để lấy Quyền (Role) của người dùng"""
