@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+openai
+qdrant-client
+langchain
+langchain-community
+langchain-openai
+langchain-text-splitters
+pypdf
+pydantic-settings
+sqlalchemy
+python-dotenv
+pymysql
+cryptography
+sentence-transformers
+pyjwt==2.8.0

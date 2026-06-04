@@ -1,0 +1,52 @@
+
+services:
+  rag_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag_api_service
+    ports:
+      - "8081:8080"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
+    depends_on:
+      - mysql_db
+      - qdrant_db
+    restart: unless-stopped
+    networks:
+      - backend
+  mysql_db:
+    image: mysql:8.0
+    container_name: resort_management
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456789"
+      MYSQL_DATABASE: "resort_management"
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    networks:
+      - backend
+  qdrant_db:
+    image: qdrant/qdrant:latest
+    container_name: qdrant_vector_db
+    ports:
+      - "6333:6333" #port rest api
+      - "6334:6334" #port gRPc
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+    networks:
+      - backend
+networks:
+  backend:
+
+volumes:
+  mysql_data:
+  qdrant_storage:

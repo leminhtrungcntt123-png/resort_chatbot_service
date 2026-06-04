@@ -1,0 +1,50 @@
+{"doc_id": "room_1_chunk_0", "content": "Loại phòng: Standard City View. Chi tiết: PhÃ²ng tiÃªu chuáº©n hÆ°á»›ng thÃ nh phá»‘. Sức chứa: 2 người. Giá: 600000.0 VNĐ.", "metadata": {"category": "room", "name": "Standard City View", "price": 600000.0, "capacity": 2}}
+{"doc_id": "room_2_chunk_0", "content": "Loại phòng: Standard Ocean View. Chi tiết: PhÃ²ng tiÃªu chuáº©n hÆ°á»›ng biá»ƒn. Sức chứa: 2 người. Giá: 750000.0 VNĐ.", "metadata": {"category": "room", "name": "Standard Ocean View", "price": 750000.0, "capacity": 2}}
+{"doc_id": "room_3_chunk_0", "content": "Loại phòng: Deluxe City View. Chi tiết: PhÃ²ng cao cáº¥p hÆ°á»›ng thÃ nh phá»‘. Sức chứa: 2 người. Giá: 1100000.0 VNĐ.", "metadata": {"category": "room", "name": "Deluxe City View", "price": 1100000.0, "capacity": 2}}
+{"doc_id": "room_4_chunk_0", "content": "Loại phòng: Deluxe Ocean View. Chi tiết: PhÃ²ng cao cáº¥p hÆ°á»›ng biá»ƒn. Sức chứa: 2 người. Giá: 1300000.0 VNĐ.", "metadata": {"category": "room", "name": "Deluxe Ocean View", "price": 1300000.0, "capacity": 2}}
+{"doc_id": "room_5_chunk_0", "content": "Loại phòng: Suite Ocean Front. Chi tiết: PhÃ²ng Suite máº·t biá»ƒn cao cáº¥p. Sức chứa: 4 người. Giá: 2800000.0 VNĐ.", "metadata": {"category": "room", "name": "Suite Ocean Front", "price": 2800000.0, "capacity": 4}}
+{"doc_id": "room_6_chunk_0", "content": "Loại phòng: Family Garden. Chi tiết: PhÃ²ng gia Ä‘Ã¬nh hÆ°á»›ng vÆ°á»n. Sức chứa: 5 người. Giá: 1700000.0 VNĐ.", "metadata": {"category": "room", "name": "Family Garden", "price": 1700000.0, "capacity": 5}}
+{"doc_id": "room_7_chunk_0", "content": "Loại phòng: Couple Romance. Chi tiết: PhÃ²ng lÃ£ng máº¡n cho cáº·p Ä‘Ã´i. Sức chứa: 2 người. Giá: 850000.0 VNĐ.", "metadata": {"category": "room", "name": "Couple Romance", "price": 850000.0, "capacity": 2}}
+{"doc_id": "room_8_chunk_0", "content": "Loại phòng: Villa 2 Bedrooms. Chi tiết: Biá»‡t thá»± 2 phÃ²ng ngá»§. Sức chứa: 4 người. Giá: 7000000.0 VNĐ.", "metadata": {"category": "room", "name": "Villa 2 Bedrooms", "price": 7000000.0, "capacity": 4}}
+{"doc_id": "room_9_chunk_0", "content": "Loại phòng: Bungalow Ocean. Chi tiết: NhÃ  gá»— hÆ°á»›ng biá»ƒn. Sức chứa: 2 người. Giá: 1600000.0 VNĐ.", "metadata": {"category": "room", "name": "Bungalow Ocean", "price": 1600000.0, "capacity": 2}}
+{"doc_id": "room_10_chunk_0", "content": "Loại phòng: Presidential Suite. Chi tiết: PhÃ²ng Tá»•ng thá»‘ng siÃªu cáº¥p. Sức chứa: 6 người. Giá: 15000000.0 VNĐ.", "metadata": {"category": "room", "name": "Presidential Suite", "price": 15000000.0, "capacity": 6}}
+{"doc_id": "service_1_chunk_0", "content": "Dịch vụ: Ä‚n tá»‘i háº£i sáº£n. Giá: 850000.0 VNĐ.", "metadata": {"category": "service", "name": "Ä‚n tá»‘i háº£i sáº£n", "price": 850000.0}}
+{"doc_id": "service_2_chunk_0", "content": "Dịch vụ: ÄÆ°a Ä‘Ã³n sÃ¢n bay. Giá: 400000.0 VNĐ.", "metadata": {"category": "service", "name": "ÄÆ°a Ä‘Ã³n sÃ¢n bay", "price": 400000.0}}
+{"doc_id": "service_3_chunk_0", "content": "Dịch vụ: ThuÃª xe mÃ¡y 1 ngÃ y. Giá: 150000.0 VNĐ.", "metadata": {"category": "service", "name": "ThuÃª xe mÃ¡y 1 ngÃ y", "price": 150000.0}}
+{"doc_id": "service_4_chunk_0", "content": "Dịch vụ: ThuÃª xe Ã´ tÃ´ 4 chá»—. Giá: 800000.0 VNĐ.", "metadata": {"category": "service", "name": "ThuÃª xe Ã´ tÃ´ 4 chá»—", "price": 800000.0}}
+{"doc_id": "service_5_chunk_0", "content": "Dịch vụ: Tour Ä‘áº£o ná»­a ngÃ y. Giá: 650000.0 VNĐ.", "metadata": {"category": "service", "name": "Tour Ä‘áº£o ná»­a ngÃ y", "price": 650000.0}}
+{"doc_id": "service_6_chunk_0", "content": "Dịch vụ: Tour láº·n ngáº¯m san hÃ´. Giá: 900000.0 VNĐ.", "metadata": {"category": "service", "name": "Tour láº·n ngáº¯m san hÃ´", "price": 900000.0}}
+{"doc_id": "service_7_chunk_0", "content": "Dịch vụ: Spa VIP. Giá: 1200000.0 VNĐ.", "metadata": {"category": "service", "name": "Spa VIP", "price": 1200000.0}}
+{"doc_id": "service_8_chunk_0", "content": "Dịch vụ: XÃ´ng hÆ¡i Ä‘Ã¡ muá»‘i. Giá: 350000.0 VNĐ.", "metadata": {"category": "service", "name": "XÃ´ng hÆ¡i Ä‘Ã¡ muá»‘i", "price": 350000.0}}
+{"doc_id": "service_9_chunk_0", "content": "Dịch vụ: Massage ThÃ¡i. Giá: 600000.0 VNĐ.", "metadata": {"category": "service", "name": "Massage ThÃ¡i", "price": 600000.0}}
+{"doc_id": "service_10_chunk_0", "content": "Dịch vụ: Buffet BBQ Tá»‘i. Giá: 550000.0 VNĐ.", "metadata": {"category": "service", "name": "Buffet BBQ Tá»‘i", "price": 550000.0}}
+{"doc_id": "service_11_chunk_0", "content": "Dịch vụ: Set Äƒn trÆ°a gia Ä‘Ã¬nh. Giá: 450000.0 VNĐ.", "metadata": {"category": "service", "name": "Set Äƒn trÆ°a gia Ä‘Ã¬nh", "price": 450000.0}}
+{"doc_id": "service_12_chunk_0", "content": "Dịch vụ: Phá»¥c vá»¥ Äƒn táº¡i phÃ²ng. Giá: 150000.0 VNĐ.", "metadata": {"category": "service", "name": "Phá»¥c vá»¥ Äƒn táº¡i phÃ²ng", "price": 150000.0}}
+{"doc_id": "service_13_chunk_0", "content": "Dịch vụ: Trang trÃ­ phÃ²ng trÄƒng máº­t. Giá: 1000000.0 VNĐ.", "metadata": {"category": "service", "name": "Trang trÃ­ phÃ²ng trÄƒng máº­t", "price": 1000000.0}}
+{"doc_id": "service_14_chunk_0", "content": "Dịch vụ: BÃ¡nh kem sinh nháº­t. Giá: 350000.0 VNĐ.", "metadata": {"category": "service", "name": "BÃ¡nh kem sinh nháº­t", "price": 350000.0}}
+{"doc_id": "service_15_chunk_0", "content": "Dịch vụ: Hoa tÆ°Æ¡i táº¡i phÃ²ng. Giá: 250000.0 VNĐ.", "metadata": {"category": "service", "name": "Hoa tÆ°Æ¡i táº¡i phÃ²ng", "price": 250000.0}}
+{"doc_id": "service_16_chunk_0", "content": "Dịch vụ: ThuÃª lá»u tráº¡i. Giá: 400000.0 VNĐ.", "metadata": {"category": "service", "name": "ThuÃª lá»u tráº¡i", "price": 400000.0}}
+{"doc_id": "service_17_chunk_0", "content": "Dịch vụ: BBQ bÃ£i biá»ƒn. Giá: 700000.0 VNĐ.", "metadata": {"category": "service", "name": "BBQ bÃ£i biá»ƒn", "price": 700000.0}}
+{"doc_id": "service_18_chunk_0", "content": "Dịch vụ: VÃ© cÃ´ng viÃªn nÆ°á»›c. Giá: 250000.0 VNĐ.", "metadata": {"category": "service", "name": "VÃ© cÃ´ng viÃªn nÆ°á»›c", "price": 250000.0}}
+{"doc_id": "service_19_chunk_0", "content": "Dịch vụ: SÃ¢n Tennis 1 giá». Giá: 200000.0 VNĐ.", "metadata": {"category": "service", "name": "SÃ¢n Tennis 1 giá»", "price": 200000.0}}
+{"doc_id": "service_20_chunk_0", "content": "Dịch vụ: SÃ¢n Golf mini. Giá: 500000.0 VNĐ.", "metadata": {"category": "service", "name": "SÃ¢n Golf mini", "price": 500000.0}}
+{"doc_id": "service_21_chunk_0", "content": "Dịch vụ: Dá»‹ch vá»¥ trÃ´ng tráº». Giá: 150000.0 VNĐ.", "metadata": {"category": "service", "name": "Dá»‹ch vá»¥ trÃ´ng tráº»", "price": 150000.0}}
+{"doc_id": "service_22_chunk_0", "content": "Dịch vụ: Giáº·t á»§i nhanh. Giá: 120000.0 VNĐ.", "metadata": {"category": "service", "name": "Giáº·t á»§i nhanh", "price": 120000.0}}
+{"doc_id": "service_23_chunk_0", "content": "Dịch vụ: ÄÃ¡nh giÃ y. Giá: 50000.0 VNĐ.", "metadata": {"category": "service", "name": "ÄÃ¡nh giÃ y", "price": 50000.0}}
+{"doc_id": "service_24_chunk_0", "content": "Dịch vụ: Minibar Full Set. Giá: 800000.0 VNĐ.", "metadata": {"category": "service", "name": "Minibar Full Set", "price": 800000.0}}
+{"doc_id": "service_25_chunk_0", "content": "Dịch vụ: ThuÃª Kayak 1 giá». Giá: 200000.0 VNĐ.", "metadata": {"category": "service", "name": "ThuÃª Kayak 1 giá»", "price": 200000.0}}
+{"doc_id": "service_26_chunk_0", "content": "Dịch vụ: ChÃ¨o SUP. Giá: 250000.0 VNĐ.", "metadata": {"category": "service", "name": "ChÃ¨o SUP", "price": 250000.0}}
+{"doc_id": "service_27_chunk_0", "content": "Dịch vụ: Cano siÃªu tá»‘c. Giá: 1500000.0 VNĐ.", "metadata": {"category": "service", "name": "Cano siÃªu tá»‘c", "price": 1500000.0}}
+{"doc_id": "service_28_chunk_0", "content": "Dịch vụ: Yoga buá»•i sÃ¡ng. Giá: 100000.0 VNĐ.", "metadata": {"category": "service", "name": "Yoga buá»•i sÃ¡ng", "price": 100000.0}}
+{"doc_id": "service_29_chunk_0", "content": "Dịch vụ: Lá»›p náº¥u Äƒn. Giá: 400000.0 VNĐ.", "metadata": {"category": "service", "name": "Lá»›p náº¥u Äƒn", "price": 400000.0}}
+{"doc_id": "service_30_chunk_0", "content": "Dịch vụ: Lá»›p pha cháº¿. Giá: 450000.0 VNĐ.", "metadata": {"category": "service", "name": "Lá»›p pha cháº¿", "price": 450000.0}}
+{"doc_id": "service_31_chunk_0", "content": "Dịch vụ: Chá»¥p áº£nh ká»· niá»‡m. Giá: 1200000.0 VNĐ.", "metadata": {"category": "service", "name": "Chá»¥p áº£nh ká»· niá»‡m", "price": 1200000.0}}
+{"doc_id": "service_32_chunk_0", "content": "Dịch vụ: TrÃ  chiá»u. Giá: 250000.0 VNĐ.", "metadata": {"category": "service", "name": "TrÃ  chiá»u", "price": 250000.0}}
+{"doc_id": "service_33_chunk_0", "content": "Dịch vụ: Thá»©c uá»‘ng Welcome. Giá: 50000.0 VNĐ.", "metadata": {"category": "service", "name": "Thá»©c uá»‘ng Welcome", "price": 50000.0}}
+{"doc_id": "service_34_chunk_0", "content": "Dịch vụ: Dá»n phÃ²ng thÃªm. Giá: 100000.0 VNĐ.", "metadata": {"category": "service", "name": "Dá»n phÃ²ng thÃªm", "price": 100000.0}}
+{"doc_id": "service_35_chunk_0", "content": "Dịch vụ: MÆ°á»£n bÃ n á»§i. Giá: 20000.0 VNĐ.", "metadata": {"category": "service", "name": "MÆ°á»£n bÃ n á»§i", "price": 20000.0}}
+{"doc_id": "service_36_chunk_0", "content": "Dịch vụ: ThuÃª loa kÃ©o. Giá: 300000.0 VNĐ.", "metadata": {"category": "service", "name": "ThuÃª loa kÃ©o", "price": 300000.0}}
+{"doc_id": "service_37_chunk_0", "content": "Dịch vụ: GÃ³i tá»• chá»©c tiá»‡c. Giá: 5000000.0 VNĐ.", "metadata": {"category": "service", "name": "GÃ³i tá»• chá»©c tiá»‡c", "price": 5000000.0}}
+{"doc_id": "service_38_chunk_0", "content": "Dịch vụ: Há»™i trÆ°á»ng 4h. Giá: 3000000.0 VNĐ.", "metadata": {"category": "service", "name": "Há»™i trÆ°á»ng 4h", "price": 3000000.0}}
+{"doc_id": "service_39_chunk_0", "content": "Dịch vụ: Há»™i trÆ°á»ng 8h. Giá: 5500000.0 VNĐ.", "metadata": {"category": "service", "name": "Há»™i trÆ°á»ng 8h", "price": 5500000.0}}
+{"doc_id": "service_40_chunk_0", "content": "Dịch vụ: Dá»‹ch vá»¥ y táº¿. Giá: 200000.0 VNĐ.", "metadata": {"category": "service", "name": "Dá»‹ch vá»¥ y táº¿", "price": 200000.0}}
