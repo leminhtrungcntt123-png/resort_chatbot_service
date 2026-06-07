@@ -1,5 +1,5 @@
 import os
-import jwt  # Thư viện giải mã Token (PyJWT)
+import jwt 
 from fastapi import APIRouter, HTTPException, Header, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from app.schemas.chat_schema import ChatRequest, ChatResponse
@@ -9,34 +9,26 @@ import logging
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
-# Khởi tạo cơ chế bảo mật Bearer Token để Swagger UI hiện nút "Authorize" (ổ khóa)
 security = HTTPBearer()
 
-# Mã bí mật dùng chung để giải mã JWT (Cấu hình trong file .env của Chatbot Service)
-# Mã này phải TRÙNG với mã JWT_SECRET của Backend chính
 try:
-    # Sử dụng os.environ[...] trực tiếp, nếu thiếu key này Python sẽ ném lỗi KeyError ngay lập tức khi chạy app
     JWT_SECRET = os.environ["JWT_SECRET"]
 except KeyError:
     logger.critical("LỖI HỆ THỐNG NGHIÊM TRỌNG: Chưa cấu hình biến 'JWT_SECRET' trong file .env!")
     raise RuntimeError("JWT_SECRET is missing. Application cannot start without it.")
 
-# Thuật toán giải mã (Có thể để dự phòng vì không phải thông tin nhạy cảm)
 JWT_ALGORITHM = os.environ.get("JWT_ALGORITHM", "HS256")
 
 def get_role_from_token(credentials: HTTPAuthorizationCredentials = Depends(security)) -> str:
-    """Hàm độc lập tự giải mã Token để lấy Quyền (Role) của người dùng"""
     try:
         token = credentials.credentials
-        # Giải mã token bằng Secret Key
         payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
         
-        # Lấy trường 'role' hoặc 'is_admin' được Backend chính đóng gói sẵn trong token
         user_role = payload.get("role") 
         if not user_role:
             raise HTTPException(status_code=403, detail="Token không chứa thông tin phân quyền!")
             
-        return user_role # Trả về "admin" hoặc "manager"
+        return user_role 
     except jwt.ExpiredSignatureError:
         raise HTTPException(status_code=401, detail="Token đã hết hạn!")
     except jwt.InvalidTokenError:
@@ -55,16 +47,17 @@ async def chat_with_resort(
         # 2. Lấy ngữ cảnh phòng từ Qdrant
         related_rooms = retrieve_context(request.message, filters)
         
-        # 3. Gọi hàm tạo câu trả lời
-        final_answer = generate_answer(
+        # 3. Gọi hàm tạo câu trả lời (Hàm này hiện tại trả về một dict gồm answer và suggested_actions)
+        final_result = generate_answer(
             user_message=request.message, 
             related_rooms=related_rooms, 
             user_role=current_role
         )
         
-        # Trả về kết quả (Đã xóa số 1 dư thừa ở đây)
+        # Trả về đầy đủ các trường cấu trúc cho Frontend nhận diện hành động nút bấm
         return ChatResponse(
-            answer=final_answer,
+            answer=final_result.get("answer", ""),
+            suggested_actions=final_result.get("suggested_actions", []),
             related_rooms=related_rooms
         )
         
