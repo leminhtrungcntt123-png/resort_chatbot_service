@@ -37,28 +37,28 @@ def get_role_from_token(credentials: HTTPAuthorizationCredentials = Depends(secu
 @router.post("/chat", response_model=ChatResponse, summary="Chat với Trợ lý ảo Resort")
 async def chat_with_resort(
     request: ChatRequest, 
-    # current_role: str = Depends(get_role_from_token) # Tạm thời đóng để test
-    current_role: str = "admin"
+    # 🔥 ĐÃ BẬT LẠI: Lấy role thật từ Token do Frontend gửi lên thông qua Header Authorization Bearer
+    current_role: str = Depends(get_role_from_token) 
 ):
     try:
-        # 1. Phân tích câu hỏi
+        # 1. Phân tích câu hỏi để lấy bộ lọc (Ví dụ: lọc theo Tầng, loại category='booking' hay 'room')
         filters = analyze_query(request.message)
         
-        # 2. Lấy ngữ cảnh phòng từ Qdrant
-        related_rooms = retrieve_context(request.message, filters)
+        # 2. Truy vấn lấy ngữ cảnh từ Qdrant (Bao gồm cả Room, Service, Booking tùy theo câu hỏi)
+        context_data = retrieve_context(request.message, filters)
         
-        # 3. Gọi hàm tạo câu trả lời (Hàm này hiện tại trả về một dict gồm answer và suggested_actions)
+        # 3. Gọi hàm tạo câu trả lời của LLM dựa trên Ngữ cảnh thu được và Vai trò (Role) của User
         final_result = generate_answer(
             user_message=request.message, 
-            related_rooms=related_rooms, 
-            user_role=current_role
+            related_rooms=context_data, # Biến này map với tham số trong rag_service của bác
+            user_role=current_role       # Truyền role thật ('ADMIN', 'MANAGER', 'RECEPTIONIST') vào để LLM giấu/hiện data nhạy cảm
         )
         
         # Trả về đầy đủ các trường cấu trúc cho Frontend nhận diện hành động nút bấm
         return ChatResponse(
             answer=final_result.get("answer", ""),
             suggested_actions=final_result.get("suggested_actions", []),
-            related_rooms=related_rooms
+            related_rooms=context_data
         )
         
     except Exception as e:

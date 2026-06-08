@@ -24,19 +24,28 @@ def transform_jsonl_to_chunks(input_file: str, output_file: str, chunk_size: int
         
         # Tạo một document mới cho mỗi chunk, giữ nguyên metadata
         for i, chunk in enumerate(chunks):
-            
-            # 🔥 THAY ĐỔI QUAN TRỌNG: ÉP NGỮ CẢNH VÀO ĐẦU MỖI CHUNK
             final_content = chunk
-            if metadata.get("category") == "room" and metadata.get("room_number"):
+            category = metadata.get("category")
+            
+            # --- 🛠️ THAY ĐỔI QUAN TRỌNG: ÉP NGỮ CẢNH THEO TỪNG THỂ LOẠI DATA ---
+            
+            # Trường hợp 1: Nếu là dữ liệu Phòng
+            if category == "room" and metadata.get("room_number"):
                 room_num = metadata.get("room_number")
                 floor_num = metadata.get("floor", "Chưa rõ")
-                # Gắn thêm nhãn vào đầu mỗi đoạn text bị băm nhỏ
                 final_content = f"[Phòng {room_num} - Tầng {floor_num}] {chunk}"
+                
+            # Trường hợp 2: Nếu là dữ liệu Booking / Khách hàng (BỔ SUNG MỚI)
+            elif category == "booking" and metadata.get("customer_name"):
+                cust_name = metadata.get("customer_name")
+                # Lấy mã đơn từ cuối doc_id (ví dụ: booking_31 -> lấy số 31)
+                booking_id = doc['doc_id'].split('_')[-1] 
+                final_content = f"[Đơn đặt phòng #{booking_id} - Khách hàng: {cust_name}] {chunk}"
             
             chunked_doc = {
                 "doc_id": f"{doc['doc_id']}_chunk_{i}",
-                "content": final_content, # Lưu nội dung đã được gắn nhãn
-                "metadata": metadata      # Giữ nguyên cục metadata
+                "content": final_content, # Lưu nội dung đã được gắn nhãn ngữ cảnh đầy đủ
+                "metadata": metadata      # Giữ nguyên cục metadata gốc
             }
             chunked_documents.append(chunked_doc)
     
@@ -45,9 +54,10 @@ def transform_jsonl_to_chunks(input_file: str, output_file: str, chunk_size: int
         for chunk_doc in chunked_documents:
             f.write(json.dumps(chunk_doc, ensure_ascii=False) + "\n")
     
-    print(f"✅ Đã chuyển đổi và ép ngữ cảnh xong! File lưu tại: {output_file}")
+    print(f"✅ Đã chuyển đổi và ép ngữ cảnh thành công cho toàn bộ hệ thống! File lưu tại: {output_file}")
 
 if __name__ == "__main__":
+    # Luồng chạy đồng bộ: Đọc từ room_data.jsonl của extract.py -> Xuất ra room_chunks.jsonl cho load.py húp
     transform_jsonl_to_chunks(
         input_file="data/room_data.jsonl", 
         output_file="data/room_chunks.jsonl"

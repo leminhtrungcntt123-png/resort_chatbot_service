@@ -245,11 +245,16 @@ INSERT INTO bookings (customer_id, check_in_date, check_out_date, status) VALUES
 (25, '2024-12-10', '2024-12-15', 'CHECKED_OUT'), (26, '2024-12-20', '2024-12-25', 'CHECKED_OUT'),
 (27, '2025-01-01', '2025-01-05', 'CHECKED_OUT'), (28, '2025-01-10', '2025-01-12', 'CHECKED_OUT'),
 (29, '2025-01-15', '2025-01-20', 'CANCELLED'),   (30, '2025-02-01', '2025-02-05', 'CHECKED_OUT'),
-(1,  '2026-05-10', '2026-05-12', 'CONFIRMED'),   (2,  '2026-05-11', '2026-05-15', 'CHECKED_IN'),
-(3,  '2026-05-12', '2026-05-14', 'PENDING'),     (4,  '2026-05-15', '2026-05-20', 'CONFIRMED'),
-(5,  '2026-05-15', '2026-05-18', 'PENDING'),     (6,  '2026-05-10', '2026-05-11', 'CHECKED_IN'),
-(7,  '2026-05-20', '2026-05-25', 'CONFIRMED'),   (8,  '2026-06-01', '2026-06-05', 'PENDING'),
-(9,  '2026-06-10', '2026-06-12', 'PENDING'),     (10, '2026-06-15', '2026-06-20', 'PENDING');
+(1,  '2026-06-01', '2026-06-10', 'CHECKED_IN'),  -- booking 31 → phòng 102
+(2,  '2026-06-02', '2026-06-08', 'CHECKED_IN'),  -- booking 32 → phòng 107
+(3,  '2026-06-03', '2026-06-09', 'CHECKED_IN'),  -- booking 33 → phòng 202
+(4,  '2026-06-01', '2026-06-07', 'CHECKED_IN'),  -- booking 34 → phòng 207
+(5,  '2026-06-04', '2026-06-11', 'CHECKED_IN'),  -- booking 35 → phòng 302
+(6,  '2026-06-02', '2026-06-06', 'CHECKED_IN'),  -- booking 36 → phòng 307
+(7,  '2026-06-05', '2026-06-12', 'CHECKED_IN'),  -- booking 37 → phòng 402
+(8,  '2026-06-03', '2026-06-08', 'CHECKED_IN'),  -- booking 38 → phòng 407
+(9,  '2026-06-01', '2026-06-09', 'CHECKED_IN'),  -- booking 39 → phòng 502
+(10, '2026-06-04', '2026-06-10', 'CHECKED_IN');  -- booking 40 → phòng 507
 
 INSERT INTO booking_rooms (booking_id, room_id, price) VALUES
 (1,1,600000),  (2,2,600000),   (3,3,600000),   (4,4,600000),
@@ -259,9 +264,16 @@ INSERT INTO booking_rooms (booking_id, room_id, price) VALUES
 (17,17,2800000),(18,18,2800000),(19,19,2800000),(20,20,2800000),
 (21,21,1700000),(22,22,1700000),(23,23,1700000),(24,24,1700000),
 (25,25,850000), (26,26,850000), (27,27,850000), (28,28,850000),
-(29,29,7000000),(30,30,7000000),(31,31,7000000),(32,32,7000000),
-(33,33,1600000),(34,34,1600000),(35,35,1600000),(36,36,1600000),
-(37,37,15000000),(38,38,15000000),(39,39,15000000),(40,40,15000000);
+(29,29,7000000),(30,30,7000000),(31, 2,  600000),   -- booking 31 → phòng 102 (Standard City View)
+(32, 7,  750000),   -- booking 32 → phòng 107 (Standard Ocean View)
+(33, 10, 1100000),  -- booking 33 → phòng 202 (Deluxe City View)
+(34, 15, 1300000),  -- booking 34 → phòng 207 (Deluxe Ocean View)
+(35, 18, 2800000),  -- booking 35 → phòng 302 (Suite Ocean Front)
+(36, 23, 1700000),  -- booking 36 → phòng 307 (Family Garden)
+(37, 26, 850000),   -- booking 37 → phòng 402 (Couple Romance)
+(38, 31, 7000000),  -- booking 38 → phòng 407 (Villa 2 Bedrooms)
+(39, 34, 1600000),  -- booking 39 → phòng 502 (Bungalow Ocean)
+(40, 39, 15000000); -- booking 40 → phòng 507 (Presidential Suite)
 
 INSERT INTO booking_services (booking_id, service_id, quantity) VALUES
 (1,1,2),(2,5,1),(3,10,4),(4,3,2),(5,15,1),(6,20,2),(7,25,1),(8,30,1),(9,35,1),(10,40,1),
@@ -301,16 +313,16 @@ INSERT INTO payments (booking_id, amount, payment_method, payment_date, payment_
 (28, 16000000, 'CASH', '2025-01-12', 'PAID'),
 (29, 0,        'CARD', NULL,         'FAILED'),
 (30, 7500000,  'CASH', '2025-02-05', 'PAID'),
-(31, 5000000,  'CARD', NULL,         'PENDING'),
-(32, 1500000,  'CASH', NULL,         'PENDING'),
-(33, 2500000,  'CARD', NULL,         'PENDING'),
-(34, 25000000, 'CARD', NULL,         'PENDING'),
-(35, 6000000,  'CASH', NULL,         'PENDING'),
-(36, 400000,   'CARD', NULL,         'PENDING'),
-(37, 20000000, 'CARD', NULL,         'PENDING'),
-(38, 15000000, 'CASH', NULL,         'PENDING'),
-(39, 1000000,  'CARD', NULL,         'PENDING'),
-(40, 1200000,  'CARD', NULL,         'PENDING');
+(31, 5400000,   'CARD', NULL, 'PENDING'),  -- 9 đêm × 600000
+(32, 4500000,   'CASH', NULL, 'PENDING'),  -- 6 đêm × 750000
+(33, 6600000,   'CARD', NULL, 'PENDING'),  -- 6 đêm × 1100000
+(34, 7800000,   'CARD', NULL, 'PENDING'),  -- 6 đêm × 1300000
+(35, 19600000,  'CASH', NULL, 'PENDING'),  -- 7 đêm × 2800000
+(36, 6800000,   'QR',   NULL, 'PENDING'),  -- 4 đêm × 1700000
+(37, 5950000,   'CARD', NULL, 'PENDING'),  -- 7 đêm × 850000
+(38, 35000000,  'CASH', NULL, 'PENDING'),  -- 5 đêm × 7000000
+(39, 12800000,  'CARD', NULL, 'PENDING'),  -- 8 đêm × 1600000
+(40, 90000000,  'CARD', NULL, 'PENDING');  -- 6 đêm × 15000000
 
 -- Tài khoản admin mặc định (password: Admin@123 đã BCrypt)
 INSERT INTO users (username, password, role, employee_id) VALUES
@@ -321,3 +333,85 @@ SELECT room_number, status FROM rooms LIMIT 5;
 SELECT * FROM users;
 
 DESCRIBE payments;
+
+
+USE resort_management;
+CREATE TABLE vip_tier_benefits (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vip_tier VARCHAR(10) NOT NULL,
+    service_id INT NOT NULL,
+    created_at DATETIME,
+    updated_at DATETIME,
+    FOREIGN KEY (service_id) REFERENCES services(id)
+);
+
+ALTER TABLE services ADD COLUMN category VARCHAR(50);
+INSERT INTO services (service_name, price, category, created_at) VALUES
+('Gym', 50000, 'GYM', NOW()),
+('Ăn sáng buffet', 80000, 'BREAKFAST', NOW()),
+('Vé hồ bơi', 60000, 'POOL', NOW());
+
+SELECT id, service_name, category FROM services 
+WHERE category IN ('GYM', 'BREAKFAST', 'POOL');
+
+INSERT INTO vip_tier_benefits (vip_tier, service_id, created_at) VALUES
+-- VIP_1: Gym + Breakfast
+('VIP_1', 41, NOW()),
+('VIP_1', 42, NOW()),
+-- VIP_2: Gym + Breakfast + Pool
+('VIP_2', 41, NOW()),
+('VIP_2', 42, NOW()),
+('VIP_2', 43, NOW()),
+-- VIP_3
+('VIP_3', 41, NOW()),
+('VIP_3', 42, NOW()),
+('VIP_3', 43, NOW()),
+-- VIP_4
+('VIP_4', 41, NOW()),
+('VIP_4', 42, NOW()),
+('VIP_4', 43, NOW()),
+-- VIP_5
+('VIP_5', 41, NOW()),
+('VIP_5', 42, NOW()),
+('VIP_5', 43, NOW());
+
+ALTER TABLE persons 
+ADD COLUMN total_spent DECIMAL(18,2) DEFAULT 0,
+ADD COLUMN vip_tier VARCHAR(10) DEFAULT 'VIP_0';
+
+ALTER TABLE booking_services 
+ADD COLUMN price_override DECIMAL(18,2);
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE persons p
+SET p.total_spent = (
+    SELECT COALESCE(SUM(pay.amount), 0)
+    FROM bookings b
+    JOIN payments pay ON pay.booking_id = b.id
+    WHERE b.customer_id = p.id
+    AND pay.payment_status = 'PAID'
+)
+WHERE p.person_type = 'CUSTOMER';
+
+UPDATE persons SET vip_tier = 
+    CASE 
+        WHEN total_spent >= 800000000 THEN 'VIP_5'
+        WHEN total_spent >= 300000000 THEN 'VIP_4'
+        WHEN total_spent >= 100000000 THEN 'VIP_3'
+        WHEN total_spent >= 20000000  THEN 'VIP_2'
+        WHEN total_spent >= 5000000   THEN 'VIP_1'
+        ELSE 'VIP_0'
+    END
+WHERE person_type = 'CUSTOMER';
+
+SET SQL_SAFE_UPDATES = 1;
+
+SELECT id, full_name, total_spent, vip_tier 
+FROM persons 
+WHERE person_type = 'CUSTOMER'
+ORDER BY total_spent DESC;
+
+-- Chức năng giảm giá cho khách vip
+ALTER TABLE payments 
+ADD COLUMN discount_amount DECIMAL(18,2) DEFAULT 0;
